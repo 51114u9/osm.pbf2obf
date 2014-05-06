@@ -1,0 +1,9 @@
+
+# directories
+OsmAndMapCreator
+*_files
+
+# files
+*.log
+*.obf
+*.pbf

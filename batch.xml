@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<batch_process>
+
+	<process_attributes 
+		mapZooms="" 
+		renderingTypesFile="" 
+		zoomWaySmoothness="" 
+		osmDbDialect="sqlite" 
+		mapDbDialect="sqlite"/>
+
+	<process 
+		directory_for_osm_files="/path/to/dir/osm_files" 
+		directory_for_index_files="/path/to/dir/index_files" 
+		directory_for_generation="/path/to/dir/gen_files" 
+		skipExistingIndexesAt="/..." 
+		indexPOI="true" indexRouting="true" indexMap="true" indexTransport="true" indexAddress="true">
+	</process>
+
+</batch_process>
