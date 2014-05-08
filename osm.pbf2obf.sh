@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOMEDIR="/home/s1114u9/Proyectos/github/osm/tools/osm.pbf2obf"
+HOMEDIR="/path/to/dir"
 
 COUNTRY="bolivia"
 CONTINENT="south-america"
@@ -41,13 +41,17 @@ fi
 RUNJAVA="$JRE_HOME"/bin/java
 
 # create working directories
+echo -e "\nCreating some directories..."
 mkdir -p $HOMEDIR/{osm,index,gen,upload}_files
 
 # download osm files
 if ! [ -f ${SOURCE} ]; then
   if ! [ "x${SRCURL}" == "x" ]; then
-    $RUNWGET -nv -T 5 -O "${SOURCE}" "${SRCURL}" || true
+    echo -e "\nSource '$(basename ${SOURCE})' not available yet..."
+    echo -e "Will download file to $(dirname $SOURCE)\n"
+    $RUNWGET -v -T 5 -O "${SOURCE}" "${SRCURL}" || true
     if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+      echo -e "\nDownloading '$(basename ${SOURCE})' failed... aborting the build.\n"
       mv -f "${SOURCE}" "${SOURCE}".FAIL
       exit 1
     fi
@@ -59,12 +63,15 @@ fi
 ## --- BUILDING ---
 cd $HOMEDIR/OsmAndMapCreator || exit 1
 
+echo -e "\nCreating ${SRCFILE} file..."
 $RUNJAVA \
     -Djava.util.logging.config.file=logging.properties \
     -Xms${JAVA_MMIN} -Xmx${JAVA_MMAX} \
     -cp "./OsmAndMapCreator.jar:./lib/OsmAnd-core.jar:./lib/*.jar" \
     net.osmand.data.index.IndexBatchCreator \
     ./batch.xml
+
+echo -e "\nDone!"
 
 mv $HOMEDIR/index_files/*.obf $HOMEDIR/upload_files
 if [ "${KEEPSRC}" == "0" ]; then
