@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOMEDIR="/path/to/dir"
+HOMEDIR="/home/s1114u9/Proyectos/github/osm/tools/osm.pbf2obf"
 
 COUNTRY="bolivia"
 CONTINENT="south-america"
@@ -11,7 +11,7 @@ JAVA_MMIN="256m"
 JAVA_MMAX="2560m"
 
 # 0=delete/1=preserve
-KEEPSRC=1    # osm files
+KEEPSRC=0    # osm files
 KEEPLOG=0    # log files
 
 ##
