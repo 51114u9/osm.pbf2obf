@@ -36,7 +36,7 @@ OSM PBF to OBF
 
 ### **Setup**
 
-Edit lines of `OsmAndMapCreator/batch.xml` file and set full directory path before last slash, e.g.
+Edit lines of `OsmAndMapCreator/batch.xml` file and set full directory path to github project directory, e.g.
 
 ```
 directory_for_osm_files="/home/<user_name>/projects/github/osm.pbf2obf/osm_files"
@@ -57,7 +57,7 @@ JAVA_MMAX="2560m"
 
 where:
 
-* `HOMEDIR` - is the full directory path to the cloned directory
+* `HOMEDIR` - is the full directory path to the project cloned
 * `COUNTRY` - country name (find your country on [download.geofabrik.de](http://download.geofabrik.de/))
 * `CONTINENT` - continent name (same as above)
 * `SRCFILE` - filename inside the **osmand** directory on the mobile device, e.g. `Japan_asia.obf`, `Spain_europe.obf`, `Bolivia_southamerica.obf`
