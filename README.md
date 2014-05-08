@@ -64,11 +64,19 @@ where:
 * `JAVA_MMIN` - initial size of memory to java app, e.g. `250m, 0.5g, 1g`
 * `JAVA_MMAX` - maximum size of memory to java app, e.g. `2550m, 4096m, 2g, 4g`
 
+If you have Ubuntu based distro, replace the first line with
+
+```
+#!/bin/bash
+```
+
 ### **Execute**
 
 1. Run script
 
-    `$ sh osm.pbf2obf.sh`
+    `$ sh osm.pbf2obf.sh`  // POSIX distro
+
+    `$ bash osm.pbf2obf.sh`  // Ubuntu based distro
 
 2. Go and pour yourself a cup of coffee (not instant) because it will take a few minutes ;-)
 
