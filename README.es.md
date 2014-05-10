@@ -48,9 +48,8 @@ Editar las líneas del archivo `osm.pbf2obf.sh`
 
 ```
 HOMEDIR="/home/<user_name>/projects/github/osm.pbf2obf"
-COUNTRY="bolivia"
-CONTINENT="south-america"
-SRCFILE="Bolivia_southamerica.osm.pbf"
+OSMANDFILE="Bolivia_southamerica.osm.pbf"
+SRCURL="http://download.geofabrik.de/south-america/bolivia-latest.osm.pbf"
 JAVA_MMIN="256m"
 JAVA_MMAX="2560m"
 ```
@@ -58,9 +57,8 @@ JAVA_MMAX="2560m"
 donde:
 
 * `HOMEDIR` - es la ruta completa al directorio del proyecto clonado
-* `COUNTRY` - nombre del país (busca tu país en [download.geofabrik.de](http://download.geofabrik.de/))
-* `CONTINENT` - nombre del continente (igual que arriba)
-* `SRCFILE` - nombre del archivo dentro del directorio **osmand** en tu dispositivo móvil, ej. `Japan_asia.obf`, `Spain_europe.obf`, `Bolivia_southamerica.obf`
+* `OSMANDFILE` - nombre del archivo dentro del directorio **osmand** en tu dispositivo móvil, ej. `Japan_asia.obf`, `Spain_europe.obf`, `Bolivia_southamerica.obf`
+* `SRCURL` - dirección url del archivo ".pbf". Obten desde [download.geofabrik.de](http://download.geofabrik.de/) o [download.openstreetmap.fr](http://download.openstreetmap.fr/extracts/)
 * `JAVA_MMIN` - tamaño inicial de memoria para la aplicación java, ej. `250m, 0.5g, 1g`
 * `JAVA_MMAX` - tamaño máximo de memoria para la aplicación java, ej. `2550m, 4096m, 2g, 4g`
 
