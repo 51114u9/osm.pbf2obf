@@ -2,10 +2,9 @@
 
 HOMEDIR="/path/to/dir"
 
-COUNTRY="bolivia"
-CONTINENT="south-america"
+OSMANDFILE="Bolivia_southamerica.osm.pbf"
 
-SRCFILE="Bolivia_southamerica.osm.pbf"
+SRCURL="http://download.geofabrik.de/south-america/bolivia-latest.osm.pbf"
 
 JAVA_MMIN="256m"
 JAVA_MMAX="2560m"
@@ -18,9 +17,8 @@ KEEPLOG=0    # log files
 ## --- with a little luck, you won't have to edit below this point ---
 ##
 
-# src/url file
-SOURCE="$HOMEDIR/osm_files/${SRCFILE}"
-SRCURL="http://download.geofabrik.de/${CONTINENT}/${COUNTRY}-latest.osm.pbf"
+# src file
+SOURCE="$HOMEDIR/osm_files/${OSMANDFILE}"
 
 # exit the script on errors
 set -e
@@ -63,7 +61,7 @@ fi
 ## --- BUILDING ---
 cd $HOMEDIR/OsmAndMapCreator || exit 1
 
-echo -e "\nCreating ${SRCFILE} file..."
+echo -e "\nCreating ${OSMANDFILE} file..."
 $RUNJAVA \
     -Djava.util.logging.config.file=logging.properties \
     -Xms${JAVA_MMIN} -Xmx${JAVA_MMAX} \
