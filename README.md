@@ -4,7 +4,9 @@ OSM PBF to OBF
 
 ### **Description**
 
-`osm.pbf2obf.sh` is a script that creates a `obf` file to [OsmAnd](https://github.com/osmandapp/Osmand) from a `osm.pbf` file using **OSMAndCreator** tool
+`osm.pbf2obf.sh` is a script that creates a `obf` file to
+[OsmAnd](https://github.com/osmandapp/Osmand) from a `osm.pbf` file
+using **OSMAndCreator** tool
 
 ### **Requirements**
 
@@ -36,7 +38,8 @@ OSM PBF to OBF
 
 ### **Setup**
 
-Edit lines of `OsmAndMapCreator/batch.xml` file and set full directory path to github project directory, e.g.
+Edit lines of `OsmAndMapCreator/batch.xml` file and set full directory
+path to github project directory, e.g.
 
 ```
 directory_for_osm_files="/home/<user_name>/projects/github/osm.pbf2obf/osm_files"
@@ -57,8 +60,12 @@ JAVA_MMAX="2560m"
 where:
 
 * `HOMEDIR` - is the full directory path to the project cloned
-* `OSMANDFILE` - filename inside the **osmand** directory on the mobile device, e.g. `Japan_asia.obf`, `Spain_europe.obf`, `Bolivia_southamerica.obf`
-* `SRCURL` - url of the ".pbf" file. Get from [download.geofabrik.de](http://download.geofabrik.de/) or [download.openstreetmap.fr](http://download.openstreetmap.fr/extracts/)
+* `OSMANDFILE` - filename inside the **osmand** directory on the mobile
+  device, e.g. `Japan_asia.obf`, `Spain_europe.obf`, `Bolivia_southamerica.obf`
+* `SRCURL` - url of the ".pbf" file. Get from
+  [download.geofabrik.de](http://download.geofabrik.de/),
+  [download.openstreetmap.fr](http://download.openstreetmap.fr/extracts/) or
+  [mapzen.com/metro-extracts](https://mapzen.com/metro-extracts)
 * `JAVA_MMIN` - initial size of memory to java app, e.g. `250m, 0.5g, 1g`
 * `JAVA_MMAX` - maximum size of memory to java app, e.g. `2550m, 4096m, 2g, 4g`
 
@@ -76,13 +83,16 @@ If you have Ubuntu based distro, replace the first line with
 
     `$ bash osm.pbf2obf.sh`  // Ubuntu based distro
 
-2. Go and pour yourself a cup of coffee (not instant) because it will take a few minutes ;-)
+2. Go and pour yourself a cup of coffee (not instant) because it will
+   take a few minutes ;-)
 
-3. Once generated your `obf` file, you can copy it into the `osmand` directory on your mobile device
+3. Once generated your `obf` file, you can copy it into the `osmand`
+   directory on your mobile device
 
 ### **Schedule**
 
-If you want to create a new file every night, you could add a crontab line like
+If you want to create a new file every night, you could add a crontab
+line like
 
 `0 4 * * * /home/<user_name>/projects/github/osm.pbf2obf/osm.pbf2obf.sh > /dev/null 2>&1`
 
